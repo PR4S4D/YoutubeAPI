@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="com.slp.youtubeapi.MainActivity">
 
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/video"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </com.google.android.youtube.player.YouTubePlayerView>
-
-    <Button
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play" />
+        android:fitsSystemWindows="true">
 
-</RelativeLayout>
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false">
+
+            </com.google.android.youtube.player.YouTubePlayerView>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:transitionGroup="true"
+        android:paddingTop="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="play" />
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
